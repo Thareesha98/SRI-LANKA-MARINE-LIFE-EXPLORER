@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.students.sri_lanka_marine_life_explorer.MarineSpeciesController">
+    <stylesheets>
+        <URL value="@/styles/marinespecies.css" />
+    </stylesheets>
+    
+      <Button layoutX="161.0" layoutY="267.0" mnemonicParsing="false" onAction="#goHome" prefHeight="60.0" prefWidth="275.0" text="Home" textFill="#d60f0f" />
+   <Label layoutX="96.0" layoutY="93.0" prefHeight="143.0" prefWidth="375.0" text="Sanuka's Part" textAlignment="CENTER" textFill="#800970">
+      <font>
+         <Font size="52.0" />
+      </font>
+   </Label>
+
+</AnchorPane>

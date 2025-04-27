@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.students.sri_lanka_marine_life_explorer.WeatherController">
+    <stylesheets>
+        <URL value="@/styles/weather.css" />
+    </stylesheets>
+    
+    <Button fx:id="refreshButton" layoutX="50.0" layoutY="150.0" text="Refresh" />
+
+
+    <Label fx:id="cityLabel" layoutX="50.0" layoutY="50.0" styleClass="label" text="City" />
+    <Label fx:id="temperatureLabel" layoutX="50.0" layoutY="100.0" styleClass="label" text="Temperature" />
+      <Button layoutX="161.0" layoutY="267.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="275.0" text="Home" textFill="#d60f0f" onAction="#goHome"  />
+
+    
+</AnchorPane>
