@@ -4,6 +4,11 @@
  */
 package com.students.sri_lanka_marine_life_explorer;
 
+
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +21,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+//import java.net.URL as JavaURL;
+
+
+
+
 /**
  * FXML Controller class
  *
@@ -25,16 +41,133 @@ import javafx.scene.control.Label;
 
 public class WeatherController implements Initializable {
 
-    @FXML
-    private Label cityLabel;
-    
-    @FXML
-    private Label temperatureLabel;
-    
-    @FXML
-    private Button refreshButton;
+    private static final String API_KEY = "b32fdca139d66e539071ca294fdb6105"; // Replace with your real OpenWeatherMap API key
 
+    private final String[] cities = {
+        "Colombo", "Galle", "Trincomalee", "Negombo", "Jaffna", "Hambantota",
+        "Kalutara", "Matara", "Batticaloa"
+    };
+
+    @FXML private Label cityLabel1, temperatureLabel1;
+    @FXML private Label cityLabel2, temperatureLabel2;
+    @FXML private Label cityLabel3, temperatureLabel3;
+    @FXML private Label cityLabel4, temperatureLabel4;
+    @FXML private Label cityLabel5, temperatureLabel5;
+    @FXML private Label cityLabel6, temperatureLabel6;
+    @FXML private Label cityLabel7, temperatureLabel7;
+    @FXML private Label cityLabel8, temperatureLabel8;
+    @FXML private Label cityLabel9, temperatureLabel9;
+
+    private Label[] cityLabels;
+    private Label[] temperatureLabels;
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        cityLabels = new Label[] {
+            cityLabel1, cityLabel2, cityLabel3, cityLabel4, cityLabel5,
+            cityLabel6, cityLabel7, cityLabel8, cityLabel9
+        };
+
+        temperatureLabels = new Label[] {
+            temperatureLabel1, temperatureLabel2, temperatureLabel3, temperatureLabel4,
+            temperatureLabel5, temperatureLabel6, temperatureLabel7, temperatureLabel8,
+            temperatureLabel9
+        };
+
+        updateWeather();
+    }
+    
+    
+    private void updateWeather() {
+        
+
+//        cityLabel1.setText("Colombo");
+//        temperatureLabel1.setText("32 c");
+//        
+//        cityLabel2.setText("Gampaha");
+//        temperatureLabel2.setText("40 c c");
+
+        String city1 = cities[4];
+        String json1 = fetchWeatherData(city1);
+        
+        String temperature = parseTemperature(json1);
+        System.out.println(temperature);
+        cityLabels[0].setText(city1);
+        temperatureLabels[0].setText(temperature);
+        
+        
+        
+    }
+    
+    private String fetchWeatherData(String city){
+        try{
+            String urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + API_KEY + "&units=metric";
+            URL url = new URL(urlString);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+        
+            BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(conn.getInputStream())
+            );
+            
+            StringBuilder sb = new StringBuilder();
+            String line;
+            while((line = reader.readLine()) !=null){
+                sb.append(line);
+            }
+            
+            reader.close();
+            return sb.toString();
+
+            
+        }catch(Exception e){
+            System.out.println("Error fetching for "+ city);
+            e.printStackTrace();
+            return null;
+        }
+        
+    }
+    
+    
+    
+    private String parseTemperature(String json) {
+        JsonObject jsonObject = JsonParser.parseString(json).getAsJsonObject();
+        return String.format("%.1f", jsonObject.getAsJsonObject("main").get("temp").getAsDouble());
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+   /* @Override
     public void initialize(URL url, ResourceBundle rb) {
         // Set default values when the screen loads
         cityLabel.setText("Loading...");
@@ -59,6 +192,9 @@ public class WeatherController implements Initializable {
         cityLabel.setText(fakeCity);
         temperatureLabel.setText(fakeTemp);
     }
+
+
+    */
     
     @FXML
     private void goHome() throws IOException{
