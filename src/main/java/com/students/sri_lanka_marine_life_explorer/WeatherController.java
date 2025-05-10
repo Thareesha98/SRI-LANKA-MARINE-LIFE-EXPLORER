@@ -26,6 +26,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 
 //import java.net.URL as JavaURL;
 
@@ -63,16 +64,7 @@ public class WeatherController implements Initializable {
 
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -100,13 +92,34 @@ public class WeatherController implements Initializable {
 //        cityLabel2.setText("Gampaha");
 //        temperatureLabel2.setText("40 c c");
 
-        String city1 = cities[4];
-        String json1 = fetchWeatherData(city1);
+//        String city1 = cities[6];
+//        String json1 = fetchWeatherData(city1);
+//        
+//       // String temperature = parseTemperature(json1);
+//        System.out.println(temperature);
+//        cityLabels[0].setText(city1);
+//        temperatureLabels[0].setText(temperature);
         
-        String temperature = parseTemperature(json1);
-        System.out.println(temperature);
-        cityLabels[0].setText(city1);
-        temperatureLabels[0].setText(temperature);
+        
+        for(int i=0;i<cities.length;++i){
+            final int index = i;
+            String city = cities[index];
+            String json = fetchWeatherData(city);
+            if(json !=null){
+                String temperature = parseTemperature(json);
+                Platform.runLater(() -> {
+                    cityLabels[index].setText(city);
+                    temperatureLabels[index].setText(temperature +  " °C");
+                    
+                });
+            }else{
+                Platform.runLater(() -> {
+                    cityLabels[index].setText(city);
+                    temperatureLabels[index].setText("Error");
+                    
+                });
+            }
+        }
         
         
         
