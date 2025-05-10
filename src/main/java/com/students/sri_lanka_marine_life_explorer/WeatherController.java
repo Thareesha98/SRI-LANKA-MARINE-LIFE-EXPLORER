@@ -106,10 +106,10 @@ public class WeatherController implements Initializable {
             String city = cities[index];
             String json = fetchWeatherData(city);
             if(json !=null){
-                String temperature = parseTemperature(json);
+                String[] weatherInformation = parseWeatherInformation(json);
                 Platform.runLater(() -> {
                     cityLabels[index].setText(city);
-                    temperatureLabels[index].setText(temperature +  " °C");
+                    temperatureLabels[index].setText(weatherInformation[0] +  " °C");
                     
                 });
             }else{
@@ -141,7 +141,7 @@ public class WeatherController implements Initializable {
             while((line = reader.readLine()) !=null){
                 sb.append(line);
             }
-            
+            System.out.println(sb.toString());
             reader.close();
             return sb.toString();
 
@@ -156,9 +156,15 @@ public class WeatherController implements Initializable {
     
     
     
-    private String parseTemperature(String json) {
+    private String[] parseWeatherInformation(String json) {
         JsonObject jsonObject = JsonParser.parseString(json).getAsJsonObject();
-        return String.format("%.1f", jsonObject.getAsJsonObject("main").get("temp").getAsDouble());
+        String temperature = String.format("%.1f", jsonObject.getAsJsonObject("main").get("temp").getAsDouble());
+        String humidity = jsonObject.getAsJsonObject("main").get("humidity").getAsString();
+        String windSpeed = jsonObject.getAsJsonObject("wind").get("speed").getAsString();
+        String seaLevel = jsonObject.getAsJsonObject("main").get("sea_level").getAsString();
+
+        String weatherDescription= jsonObject.getAsJsonArray("weather").get(0).getAsJsonObject().get("description").getAsString();
+        return new String[]{temperature, humidity,windSpeed,seaLevel,weatherDescription};
     }
     
     
