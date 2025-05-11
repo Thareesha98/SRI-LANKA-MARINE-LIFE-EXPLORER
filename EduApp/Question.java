@@ -15,6 +15,7 @@ public class Question {
         this.question = question;
         this.optionA = optionA;
         this.optionB = optionB;
+        this.optionC = optionC;
         this.optionD = optionD;
         this.correctAnswer = correctAnswer;
     }
