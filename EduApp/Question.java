@@ -20,7 +20,7 @@ public class Question {
         this.correctAnswer = correctAnswer;
     }
 
-
+    // Optional: Add getters if needed
     public String getQuestion() 
     { 
         return question; 

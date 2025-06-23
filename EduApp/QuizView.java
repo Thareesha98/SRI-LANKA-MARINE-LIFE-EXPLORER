@@ -1,9 +1,4 @@
 package EduApp;
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
- */
-
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
@@ -30,57 +25,81 @@ public class QuizView extends Application {
     private Button backButton = new Button("Back");
     private Label scoreLabel = new Label();
 
-    private BorderPane root = new BorderPane(); 
+    private BorderPane root = new BorderPane(); // Make accessible to update center
 
     @Override
     public void start(Stage stage) {
         loadQuestions();
 
-        
+        // Set up toggle group
         optionA.setToggleGroup(optionsGroup);
         optionB.setToggleGroup(optionsGroup);
         optionC.setToggleGroup(optionsGroup);
         optionD.setToggleGroup(optionsGroup);
 
-        
+        // Question label style
         questionLabel.setWrapText(true);
-        questionLabel.setStyle("-fx-font-size: 16px;");
+        questionLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
 
+        // RadioButton style
+        String radioStyle = "-fx-font-size: 14px;";
+        optionA.setStyle(radioStyle);
+        optionB.setStyle(radioStyle);
+        optionC.setStyle(radioStyle);
+        optionD.setStyle(radioStyle);
 
+        // Score label style
+        scoreLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: #555;");
+
+        // Styled buttons
+        String buttonStyle = "-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold; "
+                + "-fx-padding: 10 20 10 20; -fx-background-radius: 20; -fx-font-size: 14px;";
+        String buttonHoverStyle = "-fx-background-color: #1976D2; -fx-text-fill: white; -fx-font-weight: bold; "
+                + "-fx-padding: 10 20 10 20; -fx-background-radius: 20; -fx-font-size: 14px;";
+
+        nextButton.setStyle(buttonStyle);
+        backButton.setStyle(buttonStyle);
+
+        nextButton.setOnMouseEntered(e -> nextButton.setStyle(buttonHoverStyle));
+        nextButton.setOnMouseExited(e -> nextButton.setStyle(buttonStyle));
+        backButton.setOnMouseEntered(e -> backButton.setStyle(buttonHoverStyle));
+        backButton.setOnMouseExited(e -> backButton.setStyle(buttonStyle));
+
+        // Options layout
         VBox optionsBox = new VBox(15, optionA, optionB, optionC, optionD);
         optionsBox.setAlignment(Pos.CENTER_LEFT);
 
-        
+        // Button layout
         HBox buttonBox = new HBox(20, backButton, nextButton);
         buttonBox.setAlignment(Pos.CENTER);
 
-        
+        // Main quiz layout
         VBox contentBox = new VBox(30, questionLabel, optionsBox, buttonBox, scoreLabel);
         contentBox.setAlignment(Pos.CENTER);
         contentBox.setStyle("-fx-padding: 30;");
         contentBox.setMaxWidth(600);
 
-    
+        // Set layout to root
         root.setCenter(contentBox);
 
-    
+        // Show first question
         displayQuestion();
 
-        
+        // Next button action
         nextButton.setOnAction(e -> {
             checkAnswer();
             currentIndex++;
             if (currentIndex < questions.size()) {
                 displayQuestion();
             } else {
-                showCompletionScreen(); 
+                showCompletionScreen();
             }
         });
 
-        
+        // Back button action
         backButton.setOnAction(e -> new MainApp().start(stage));
 
-        
+        // Scene and stage
         Scene scene = new Scene(root, 800, 600);
         stage.setTitle("Marine Biodiversity Quiz");
         stage.setScene(scene);
@@ -94,9 +113,9 @@ public class QuizView extends Application {
         optionB.setText(q.getOptionB());
         optionC.setText(q.getOptionC());
         optionD.setText(q.getOptionD());
-        optionsGroup.selectToggle(null); 
+        optionsGroup.selectToggle(null); // Clear selection
 
-        
+        // Ensure visible and buttons enabled
         optionA.setVisible(true);
         optionB.setVisible(true);
         optionC.setVisible(true);
@@ -116,21 +135,21 @@ public class QuizView extends Application {
     }
 
     private void showCompletionScreen() {
-        
-        Label completedLabel = new Label("Quiz Completed!");
-        completedLabel.setStyle("-fx-font-size: 20px; -fx-font-weight: bold;");
-        Label finalScore = new Label("Final Score: " + score + " out of " + questions.size());
+        // Labels for final message
+        Label completedLabel = new Label("🎉 Quiz Completed!");
+        completedLabel.setStyle("-fx-font-size: 22px; -fx-font-weight: bold;");
+        Label finalScore = new Label("Your Score: " + score + " out of " + questions.size());
         finalScore.setStyle("-fx-font-size: 16px;");
 
-
+        // Back button layout
         HBox finalButtonBox = new HBox(backButton);
         finalButtonBox.setAlignment(Pos.CENTER);
 
-        
+        // Final message layout
         VBox finalBox = new VBox(20, completedLabel, finalScore, finalButtonBox);
         finalBox.setAlignment(Pos.CENTER);
 
-    
+        // Replace root center
         root.setCenter(finalBox);
     }
 
@@ -160,6 +179,7 @@ public class QuizView extends Application {
         launch();
     }
 }
+
 
 
 
