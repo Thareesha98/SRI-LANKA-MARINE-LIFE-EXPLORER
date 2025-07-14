@@ -1,0 +1,48 @@
+/* Windows 8 Start-like UI CSS */
+
+/* Title Label - Clean and impactful */
+.title-label {
+    -fx-text-fill: #FFFFFF; /* Pure white text for contrast */
+    -fx-font-weight: bold; /* Use bold for prominence */
+    /* Removed dropshadow for a flatter look, or keep a very subtle one */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 5, 0, 0, 0); /* Subtle shadow for readability on busy backgrounds */
+    -fx-font-size: 36px; /* Ensure a prominent size, adjust as needed */
+    -fx-font-family: "Segoe UI Semibold", "Arial"; /* Prefer Segoe UI if available, fallback to Arial */
+}
+
+/* Modern Button - Converted to Windows 8 Tile style */
+.modern-button {
+    -fx-pref-width: 180px; /* Keep consistent tile width */
+    -fx-pref-height: 120px; /* Increased height to make it more like a tile */
+    -fx-background-color: #0078D7; /* Default Windows 8 blue - flat color */
+    -fx-text-fill: white; /* White text for all tiles */
+    -fx-font-size: 18px; /* Larger font for tile readability */
+    -fx-font-weight: bold;
+    -fx-background-radius: 0; /* NO rounded corners - crucial for Metro UI */
+    -fx-border-radius: 0; /* NO rounded borders */
+    -fx-cursor: hand;
+    /* Removed complex shadow, keeping it flat */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 2, 2); /* Very subtle shadow for depth, common on tiles */
+    -fx-alignment: center; /* Center text within the tile */
+    -fx-padding: 0; /* Remove internal padding to maximize text area */
+    -fx-transition: -fx-background-color 0.2s ease-in-out, -fx-effect 0.2s ease-in-out, -fx-scale-x 0.2s ease-in-out, -fx-scale-y 0.2s ease-in-out; /* Smooth transitions */
+}
+
+.modern-button:hover {
+    -fx-background-color: #005AA7; /* A slightly darker shade of the base blue on hover */
+    -fx-scale-x: 1.02; /* Slight scale on hover for feedback */
+    -fx-scale-y: 1.02; /* Slight scale on hover for feedback */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 3, 3); /* Slightly more pronounced shadow on hover */
+}
+
+/* To apply different colors, you would add more classes like this in your CSS: */
+.modern-button.green-tile {
+    -fx-background-color: #60A917; /* Metro green */
+}
+.modern-button.orange-tile {
+    -fx-background-color: #FA6800; /* Metro orange */
+}
+.modern-button.red-tile {
+    -fx-background-color: #E51400; /* Metro red */
+}
+/* ...and so on for other colors as seen in the previous example */

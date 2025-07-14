@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" stylesheets="@../../../styles/fishering.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.students.sri_lanka_marine_life_explorer.FisheringController">
+   <Button layoutX="126.0" layoutY="524.0" mnemonicParsing="false" onAction="#goToMainMenu" text="Main Menu" />
+     <TextField fx:id="nameField" layoutX="98.0" layoutY="223.0" promptText="Name" />
+    <TextField fx:id="nicField" layoutX="98.0" layoutY="283.0" promptText="NIC" />
+    <TextField fx:id="districtField" layoutX="98.0" layoutY="350.0" promptText="District" />
+    <TextField fx:id="contactField" layoutX="98.0" layoutY="412.0" promptText="Contact" />
+    <Button layoutX="136.0" layoutY="471.0" onAction="#registerFisherman" text="Register" />
+    
+     <TableView fx:id="fishermanTable" layoutX="386.0" layoutY="177.0" prefHeight="392.0" prefWidth="500.0">
+        <columns>
+            <TableColumn fx:id="nameCol" prefWidth="119.0" text="Name" />
+            <TableColumn fx:id="nicCol" prefWidth="139.0" text="NIC" />
+            <TableColumn fx:id="districtCol" prefWidth="103.0" text="District" />
+            <TableColumn fx:id="contactCol" prefWidth="93.0" text="Contact" />
+        </columns>
+    </TableView>
+   <Label fx:id="topicLabel" layoutX="194.0" layoutY="14.0" prefHeight="75.0" prefWidth="513.0" text="Fisherman Registration" />
+</AnchorPane>

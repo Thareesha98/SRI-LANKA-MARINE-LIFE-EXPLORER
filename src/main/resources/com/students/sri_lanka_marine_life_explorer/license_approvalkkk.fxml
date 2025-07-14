@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.students.sri_lanka_marine_life_explorer.LicenseApprovalController">
+    <stylesheets>
+        <URL value="@/styles/license_approval.css"/>
+    </stylesheets>
+    
+    <BorderPane >
+    
+    <top>
+        <Label text="Pending License Approvals" style="-fx-font-size: 18px; -fx-padding: 10px;"/>
+    </top>
+
+    <center>
+        <TableView fx:id="approvalTable">
+            <columns>
+                <TableColumn fx:id="boatColumn" text="Boat Info" prefWidth="150"/>
+                <TableColumn fx:id="typeColumn" text="Fishing Type" prefWidth="120"/>
+                <TableColumn fx:id="issueDateColumn" text="Issue Date" prefWidth="100"/>
+                <TableColumn fx:id="expiryDateColumn" text="Expiry Date" prefWidth="100"/>
+                <TableColumn fx:id="regionColumn" text="Region" prefWidth="100"/>
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT" padding="10">
+            <Button fx:id="approveButton" text="Approve" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+            <Button fx:id="rejectButton" text="Reject" style="-fx-background-color: #f44336; -fx-text-fill: white;" />
+        </HBox>
+    </bottom>
+</BorderPane>
+    
+</AnchorPane>

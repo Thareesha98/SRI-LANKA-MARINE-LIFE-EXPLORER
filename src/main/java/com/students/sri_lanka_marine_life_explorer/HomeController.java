@@ -4,7 +4,10 @@
  */
 package com.students.sri_lanka_marine_life_explorer;
 import java.io.IOException;
+import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.util.Duration;
 
 
 /**
@@ -12,6 +15,8 @@ import javafx.fxml.FXML;
  * @author thareesha
  */
 public class HomeController {
+
+    private Node myButton;
     
     @FXML
     private void goToWeather() throws IOException{
@@ -25,17 +30,46 @@ public class HomeController {
     
     @FXML
     private void goToFisheries() throws IOException{
-        App.setRoot("Fisheries");
+        App.setRoot("BeachCondition");
     }
     
     @FXML
     private void goToMap() throws IOException{
-        App.setRoot("Map");
+        App.setRoot("News");
     }
     
     @FXML
     private void goToMarine() throws IOException{
         App.setRoot("MarineSpecies");
     }
+    
+    @FXML
+    private void goToRegistration() throws IOException{
+        App.setRoot("Fishering");
+    }
+    
+    @FXML
+    private void goToLicense() throws IOException{
+        App.setRoot("license");
+    }
+    
+    @FXML
+    private void goToBoatRegistration() throws IOException{
+        App.setRoot("boat");
+    }
+    
+    @FXML
+    private void goToLicenseList() throws IOException{
+        App.setRoot("LicenseTable");
+    }
+     @FXML
+    private void goToAdminLogin() throws IOException{
+        App.setRoot("AdminLogin");
+    }
+    
+    
+
+    
+    
     
 }

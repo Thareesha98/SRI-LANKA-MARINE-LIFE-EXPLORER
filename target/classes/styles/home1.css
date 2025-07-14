@@ -1,0 +1,49 @@
+
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.title-label {
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.6), 5, 0, 3, 3);
+    -fx-font-weight: bold;
+}
+
+/* Generic tile style */
+.tile-button {
+    -fx-pref-width: 250;
+    -fx-pref-height: 150;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 3, 3);
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-padding: 20;
+}
+
+/* Hover effect */
+.tile-button:hover {
+    -fx-opacity: 0.9;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.4), 10, 0.2, 4, 4);
+}
+
+/* Color tiles (like Windows 8) */
+.tile-blue    { -fx-background-color: #0078D7; }
+.tile-green   { -fx-background-color: #107C10; }
+.tile-orange  { -fx-background-color: #FF8C00; }
+.tile-purple  { -fx-background-color: #6A00FF; }
+.tile-teal    { -fx-background-color: #00B7C3; }
+.tile-cyan    { -fx-background-color: #00A4EF; }
+.tile-pink    { -fx-background-color: #E3008C; }
+.tile-red     { -fx-background-color: #E81123; }
+.tile-yellow  { -fx-background-color: #FFB900; }
+.tile-brown   { -fx-background-color: #8E562E; }
+
+/* Optional: ScrollPane or responsive resizing can be added later */

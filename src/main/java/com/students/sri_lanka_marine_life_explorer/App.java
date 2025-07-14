@@ -23,6 +23,8 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         //scene = new Scene(loadFXML("primary"), 640, 480);
         scene = new Scene(loadFXML("home"), 900, 700);
+       //scene.getStylesheets().add(getClass().getResource("../../../styles/home.css").toExternalForm());
+
         stage.setScene(scene);
         stage.show();
     }

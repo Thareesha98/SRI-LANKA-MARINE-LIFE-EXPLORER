@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" stylesheets="@../../../styles/license.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.students.sri_lanka_marine_life_explorer.LicenseController">
+    <ComboBox fx:id="boatCombo" layoutX="373.0" layoutY="168.0" promptText="Select Boat" />
+    <ComboBox fx:id="typeCombo" layoutX="368.0" layoutY="247.0" promptText="License Type" />
+    <DatePicker fx:id="issueDatePicker" layoutX="328.0" layoutY="323.0" promptText="Issue Date" />
+    <DatePicker fx:id="expiryDatePicker" layoutX="328.0" layoutY="402.0" promptText="Expiry Date" />
+    <TextField fx:id="regionField" layoutX="356.0" layoutY="478.0" promptText="Fishing Region" />
+
+    <Button layoutX="401.0" layoutY="553.0" onAction="#applyLicense" text="Apply " />
+   <Button layoutX="384.0" layoutY="616.0" mnemonicParsing="false" onAction="#goMainMenu" text="Main Menu" />
+   <Label layoutX="294.0" layoutY="51.0" prefHeight="73.0" prefWidth="314.0" text="Apply for License">
+      <font>
+         <Font size="23.0" />
+      </font>
+   </Label>
+</AnchorPane>

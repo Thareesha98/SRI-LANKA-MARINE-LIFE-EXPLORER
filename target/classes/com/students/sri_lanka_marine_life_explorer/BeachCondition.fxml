@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" stylesheets="@../../../styles/beachcondition.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.students.sri_lanka_marine_life_explorer.BeachConditionController">
+   <children>
+      <VBox prefHeight="700.0" prefWidth="900.0">
+         <children>
+            <Label fx:id="topic" alignment="CENTER" contentDisplay="CENTER" opacity="0.82" prefHeight="82.0" prefWidth="900.0" text="Beach Condition" textAlignment="CENTER" textFill="#170303">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin></Label>
+            <HBox prefHeight="57.0" prefWidth="900.0">
+               <children>
+                  <Label prefHeight="38.0" prefWidth="156.0" text="Select Beach">
+                     <HBox.margin>
+                        <Insets left="35.0" right="30.0" />
+                     </HBox.margin></Label>
+                  <ComboBox fx:id="beachSelector" prefHeight="14.0" prefWidth="193.0">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin></ComboBox>
+                  <Button fx:id="fetchDataButton" mnemonicParsing="false" prefHeight="36.0" prefWidth="85.0" text="Get" />
+                  <Button mnemonicParsing="false" onAction="#goToMainMenu" text="Main Menu">
+                     <HBox.margin>
+                        <Insets left="230.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <LineChart fx:id="tideChart" title="Tide">
+              <xAxis>
+                <NumberAxis label="Time (Hours)" side="BOTTOM" fx:id="xAxis" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="yAxis" label="Tide Height (m)" side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <TextArea fx:id="tideInfoArea" editable="false" prefHeight="161.0" prefWidth="900.0" styleClass="text-area" wrapText="true" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

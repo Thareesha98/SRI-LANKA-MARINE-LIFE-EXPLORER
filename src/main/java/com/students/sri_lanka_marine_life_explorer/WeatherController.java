@@ -65,11 +65,35 @@ public class WeatherController implements Initializable {
 
     private static final String API_KEY = "b32fdca139d66e539071ca294fdb6105"; // Replace with your real OpenWeatherMap API key
 
-    private final String[] cities = {
-        "Colombo", "Galle", "Trincomalee", "Negombo", "Jaffna", "Hambantota",
-        "Kalutara", "Matara", "Batticaloa"
-    };
+//    private final String[] cities = {
+//        "Colombo", "Galle", "Trincomalee", "Negombo", "Jaffna", "Hambantota",
+//        "Kalutara", "Matara", "Batticaloa"
+//    };
+//    
     
+    private final String[] cities = {
+    "Colombo",        // West coast
+    "Galle",          // South
+    "Trincomalee",    // East
+    "Negombo",        // Near airport, west
+    "Jaffna",         // North coast
+    "Hambantota",     // Southeast
+    "Kalutara",       // Southwest
+    "Matara",         // South
+    "Batticaloa",     // East
+    "Beruwala",       // Southwest
+    "Puttalam",
+    "Ampara",
+    "Bentota",        // Southwest
+    "Weligama",       // Southern surf town
+    "Chilaw",  
+    "Vavuniya", "Kilinochchi",
+    "Mannar",
+// North-west coast
+    "Pasikuda"        // Popular east coast beach
+};
+    
+
     
 
     @FXML private Label cityLabel1, temperatureLabel1 ,humidityLabel1, windLabel1,sealevelLabel1,descriptionLabel1 ;
@@ -77,10 +101,20 @@ public class WeatherController implements Initializable {
     @FXML private Label cityLabel3, temperatureLabel3,humidityLabel3, windLabel3,sealevelLabel3,descriptionLabel3;
     @FXML private Label cityLabel4, temperatureLabel4,humidityLabel4, windLabel4,sealevelLabel4,descriptionLabel4;
     @FXML private Label cityLabel5, temperatureLabel5,humidityLabel5, windLabel5,sealevelLabel5,descriptionLabel5;
-    @FXML private Label cityLabel6, temperatureLabel6;
-    @FXML private Label cityLabel7, temperatureLabel7;
-    @FXML private Label cityLabel8, temperatureLabel8;
-    @FXML private Label cityLabel9, temperatureLabel9;
+    @FXML private Label cityLabel6, temperatureLabel6, humidityLabel6, windLabel6,sealevelLabel6,descriptionLabel6;
+    @FXML private Label cityLabel7, temperatureLabel7 ,humidityLabel7, windLabel7,sealevelLabel7,descriptionLabel7 ;
+    @FXML private Label cityLabel8, temperatureLabel8, humidityLabel8, windLabel8,sealevelLabel8,descriptionLabel8;
+    @FXML private Label cityLabel9, temperatureLabel9, humidityLabel9, windLabel9,sealevelLabel9,descriptionLabel9;
+    @FXML private Label cityLabel10, temperatureLabel10 ,humidityLabel10, windLabel10,sealevelLabel10,descriptionLabel10 ;
+    @FXML private Label cityLabel11, temperatureLabel11 ,humidityLabel11, windLabel11,sealevelLabel11,descriptionLabel11 ;
+    @FXML private Label cityLabel12, temperatureLabel12 ,humidityLabel12, windLabel12,sealevelLabel12,descriptionLabel12 ;
+    @FXML private Label cityLabel13, temperatureLabel13 ,humidityLabel13, windLabel13,sealevelLabel13,descriptionLabel13 ;
+    @FXML private Label cityLabel14, temperatureLabel14 ,humidityLabel14, windLabel14,sealevelLabel14,descriptionLabel14 ;
+    @FXML private Label cityLabel15, temperatureLabel15 ,humidityLabel15, windLabel15,sealevelLabel15,descriptionLabel15 ;
+    @FXML private Label cityLabel16, temperatureLabel16 ,humidityLabel16, windLabel16,sealevelLabel16,descriptionLabel16 ;
+    @FXML private Label cityLabel17, temperatureLabel17 ,humidityLabel17, windLabel17,sealevelLabel17,descriptionLabel17 ;
+    @FXML private Label cityLabel18, temperatureLabel18 ,humidityLabel18, windLabel18,sealevelLabel18,descriptionLabel18 ;
+
 
     private Label[] cityLabels;
     private Label[] temperatureLabels;
@@ -91,7 +125,11 @@ public class WeatherController implements Initializable {
     private Label[] weatherImageLabels;
     
     @FXML
-    private ImageView weatherImage1,weatherImage2,weatherImage3,weatherImage4,weatherImage5;
+    private ImageView weatherImage1,weatherImage2,weatherImage3,weatherImage4,weatherImage5,weatherImage6,weatherImage7,weatherImage8,weatherImage9,weatherImage10;
+    
+    @FXML
+    private ImageView weatherImage11,weatherImage12,weatherImage13,weatherImage14,weatherImage15,weatherImage16,weatherImage17,weatherImage18;
+    
     @FXML
     private ImageView[] weatherImages;
     
@@ -131,29 +169,37 @@ public class WeatherController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         cityLabels = new Label[] {
             cityLabel1, cityLabel2, cityLabel3, cityLabel4, cityLabel5,
-            cityLabel6, cityLabel7, cityLabel8, cityLabel9
+            cityLabel6, cityLabel7, cityLabel8, cityLabel9,cityLabel10,cityLabel11, cityLabel12, cityLabel13, cityLabel14, cityLabel15,
+            cityLabel16, cityLabel17, cityLabel18
         };
 
         temperatureLabels = new Label[] {
             temperatureLabel1, temperatureLabel2, temperatureLabel3, temperatureLabel4,
             temperatureLabel5, temperatureLabel6, temperatureLabel7, temperatureLabel8,
-            temperatureLabel9
+            temperatureLabel9,temperatureLabel10,temperatureLabel11, temperatureLabel12, temperatureLabel13, temperatureLabel14,
+            temperatureLabel15, temperatureLabel16, temperatureLabel17, temperatureLabel18
         };
         
         humidityLabels = new Label[] {
-            humidityLabel1,humidityLabel2,humidityLabel3,humidityLabel4,humidityLabel5,
+            humidityLabel1,humidityLabel2,humidityLabel3,humidityLabel4,humidityLabel5,humidityLabel6,humidityLabel7,humidityLabel8,humidityLabel9,humidityLabel10, 
+            humidityLabel11,humidityLabel12,humidityLabel13,humidityLabel14,humidityLabel15,humidityLabel16,humidityLabel17,humidityLabel18
+
         };
         
         windLabels = new Label[]{
-            windLabel1,windLabel2,windLabel3,windLabel4,windLabel5
+            windLabel1,windLabel2,windLabel3,windLabel4,windLabel5 , windLabel6,windLabel7,windLabel8,windLabel9,windLabel10,
+            windLabel11,windLabel12,windLabel13,windLabel14,windLabel15 , windLabel16,windLabel17,windLabel18
         };
         
         sealevelLabels = new Label[]{
-            sealevelLabel1,sealevelLabel2,sealevelLabel3,sealevelLabel4,sealevelLabel5
+            sealevelLabel1,sealevelLabel2,sealevelLabel3,sealevelLabel4,sealevelLabel5,sealevelLabel6,sealevelLabel7,sealevelLabel8,sealevelLabel9,sealevelLabel10,
+            sealevelLabel11,sealevelLabel12,sealevelLabel13,sealevelLabel14,sealevelLabel15,sealevelLabel16,sealevelLabel17,sealevelLabel18
         };
         
         descriptionLabels = new Label[]{
-            descriptionLabel1,descriptionLabel2,descriptionLabel3,descriptionLabel4,descriptionLabel5,
+            descriptionLabel1,descriptionLabel2,descriptionLabel3,descriptionLabel4,descriptionLabel5,descriptionLabel6,descriptionLabel7,descriptionLabel8,descriptionLabel9,descriptionLabel10,
+            descriptionLabel11,descriptionLabel12,descriptionLabel13,descriptionLabel14,descriptionLabel15,descriptionLabel16,descriptionLabel17,descriptionLabel18
+
         };
         
        
@@ -163,7 +209,20 @@ public class WeatherController implements Initializable {
             weatherImage2,
             weatherImage3,
             weatherImage4,
-            weatherImage5
+            weatherImage5,
+            weatherImage6,
+            weatherImage7,
+            weatherImage8,
+            weatherImage9,
+            weatherImage10,
+             weatherImage11,
+            weatherImage12,
+            weatherImage13,
+            weatherImage14,
+            weatherImage15,
+            weatherImage16,
+            weatherImage17,
+            weatherImage18
         };
 
         
@@ -181,7 +240,7 @@ public class WeatherController implements Initializable {
     
     private void updateWeather() {
         System.out.println("update weather called");
-        for(int i=0;i<5;++i){
+        for(int i=0;i<18;++i){
             final int index = i;
             String city = cities[index];
             String json = fetchWeatherData(city);
@@ -242,19 +301,39 @@ public class WeatherController implements Initializable {
 //        return exists;
 //    }
     
-    private boolean checkEmptyTable(Connection conn, String tableName) throws SQLException {
-    String query = "SELECT 1 FROM " + tableName + " LIMIT 1";
-    try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
-        return !rs.next(); // returns true if there's at least one row
+//    private boolean checkEmptyTable(Connection conn, String tableName) throws SQLException {
+//        String query = "SELECT 1 FROM " + tableName + " LIMIT 1";
+//        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
+//            return !rs.next(); // returns true if there's at least one row
+//        }
+//    }
+    
+    private boolean doesTableExist(Connection conn, String tableName) throws SQLException {
+    String sql = "SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = ? AND table_name = ?";
+    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+        stmt.setString(1, conn.getCatalog());  // current database name
+        stmt.setString(2, tableName);          // exact table name (case-sensitive)
+        try (ResultSet rs = stmt.executeQuery()) {
+            if (rs.next()) {
+                return rs.getInt(1) > 0;
+            }
+        }
     }
+    return false;
 }
+
+
+
+
 
     
     
 private void loadWeatherData() throws SQLException {
     Connection conn = DatabaseConnector.getConnection();
-    System.out.println(checkEmptyTable(conn,"weathertable"));
-   if(checkEmptyTable(conn,"weathertable")){
+    //System.out.println(checkEmptyTable(conn,"weathertable"));
+    boolean x = doesTableExist(conn,"weathertable");
+    System.out.println("Table Exist ? " + x);
+   if(!doesTableExist(conn,"weathertable")){
        updateWeather();
     }else{
  
@@ -265,7 +344,7 @@ private void loadWeatherData() throws SQLException {
 
 
             int i = 0;
-            while (rs.next() && i < 5) {
+            while (rs.next() && i < 18) {
                 final int index = i; // for lambda capture
                 final String city = rs.getString("cityname");
                 final String temp = rs.getString("temp");
@@ -302,16 +381,17 @@ private void loadWeatherData() throws SQLException {
     private void saveWeatherData() throws SQLException{
         System.out.println("Start saving to sql");
         Connection conn = DatabaseConnector.getConnection();
-        String createTable = "CREATE TABLE IF NOT EXISTS weathertable ( id char(2) PRIMARY KEY , cityname varchar(10),temp varchar(15),humidity varchar(5),windspeed varchar(5),sealevel varchar(5),weatherdescription varchar(15))";
+        String createTable = "CREATE TABLE IF NOT EXISTS weathertable ( id char(2) PRIMARY KEY , cityname varchar(20),temp varchar(20),humidity varchar(20),windspeed varchar(20),sealevel varchar(20),weatherdescription varchar(30))";
         String insertTable = "INSERT INTO weathertable values(?,?,?,?,?,?,?)";
         String updateTable = "UPDATE weathertable set temp=?,humidity=?,windspeed=?,weatherdescription=? where id=?";
-        boolean emptyTable = checkEmptyTable(conn,"weathertable");
+        boolean existTable = doesTableExist(conn,"weathertable");
         
         PreparedStatement create = conn.prepareStatement(createTable);
         PreparedStatement insert = conn.prepareStatement(insertTable);
         PreparedStatement update = conn.prepareStatement(updateTable);
-        if(!emptyTable){
-            for(int i=0;i<5;i++){
+        
+        if(existTable){
+            for(int i=0;i<18;i++){
                 int index = i;
                 
            //     System.out.println("Inserting row: " + cityLabels[i].getText());
@@ -326,8 +406,8 @@ private void loadWeatherData() throws SQLException {
                 int rows = update.executeUpdate();
             }
         }else{
-            create.executeUpdate();
-            for(int i=0;i<5;i++){
+            create.execute();
+            for(int i=0;i<18;i++){
                 int index = i;
                 System.out.println("Inserting row: " + cityLabels[i].getText());
                 insert.setString(1, String.valueOf(index+10
@@ -336,11 +416,12 @@ private void loadWeatherData() throws SQLException {
                 insert.setString(3, temperatureLabels[index].getText());
                 insert.setString(4, humidityLabels[index].getText());
                 insert.setString(5, windLabels[index].getText());
-               insert.setString(6, "nullllll value");//sealevelLabels[index].getText());
+               insert.setString(6, "null value");//sealevelLabels[index].getText());
                 insert.setString(7, descriptionLabels[index].getText());
                 int rows = insert.executeUpdate();
             }
         }
+        loadWeatherData();
         System.out.println("Update finished");
   
     }
@@ -420,7 +501,10 @@ private void loadWeatherData() throws SQLException {
         return new String[]{temperature, humidity,windSpeed,seaLevel,weatherDescription};
     }
     
-    
+    @FXML
+    private void refreshData() throws IOException{
+        updateWeather();
+    }
  
     @FXML
     private void goHome() throws IOException{

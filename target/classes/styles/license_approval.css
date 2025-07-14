@@ -1,0 +1,121 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+
+/* ------------------ GLOBAL STYLES ------------------ */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #e0f7fa, #b2ebf2);
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* ------------------ HEADER LABEL ------------------ */
+.label {
+    -fx-text-fill: #004d40;
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+    -fx-padding: 20 0 20 0;
+    -fx-alignment: center;
+}
+
+.label:first-child {
+    -fx-background-color: linear-gradient(to right, #00acc1, #4dd0e1);
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
+    -fx-padding: 20;
+    -fx-background-radius: 0 0 20 20;
+}
+
+/* ------------------ TABLE VIEW ------------------ */
+.table-view {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-border-color: #00bcd4;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+    -fx-table-cell-border-color: #b2ebf2;
+    -fx-fixed-cell-size: 40px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to right, #00acc1, #26c6da);
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-column {
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 14px;
+}
+
+.table-row-cell {
+    -fx-font-size: 14px;
+    -fx-text-fill: #004d40;
+}
+
+.table-row-cell:filled:hover {
+    -fx-background-color: #e0f2f1;
+}
+
+/* ------------------ BUTTON ------------------ */
+.button {
+    -fx-background-color: linear-gradient(to right, #00bcd4, #26c6da);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 25;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0.3, 0, 2);
+    -fx-border-color: transparent;
+    -fx-margin: 10;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #00838f, #00acc1);
+}
+
+/* Specific Buttons with IDs */
+#approveButton {
+    -fx-background-color: linear-gradient(to right, #43e97b, #38f9d7);
+}
+
+#rejectButton {
+    -fx-background-color: linear-gradient(to right, #ff6a00, #ee0979);
+}
+
+#approveButton:hover {
+    -fx-background-color: linear-gradient(to right, #00c853, #00e676);
+}
+
+#rejectButton:hover {
+    -fx-background-color: linear-gradient(to right, #c62828, #ef5350);
+}
+
+/* ------------------ HBOX (Footer Controls) ------------------ */
+.hbox {
+    -fx-alignment: center;
+    -fx-spacing: 15;
+    -fx-padding: 20 0 30 0;
+}
+
+/* ------------------ BORDERPANE (Optional) ------------------ */
+.border-pane {
+    -fx-padding: 30;
+}
+
+/* ------------------ ADDITIONAL STYLES ------------------ */
+.table-cell {
+    -fx-padding: 8;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #b2ebf2;
+}

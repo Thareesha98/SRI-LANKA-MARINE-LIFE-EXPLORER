@@ -1,0 +1,96 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+
+/* ------------------ GLOBAL STYLES ------------------ */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #b2ebf2, #e0f7fa);
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* ------------------ LABELS ------------------ */
+.label {
+    -fx-text-fill: #004d40;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+
+/* ------------------ COMBOBOX ------------------ */
+.combo-box {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-border-color: #00acc1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-font-size: 14px;
+    -fx-padding: 8 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 172, 193, 0.3), 5, 0.4, 0, 2);
+}
+
+.combo-box:focused {
+    -fx-border-color: #00838f;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 172, 193, 0.6), 6, 0.4, 0, 2);
+}
+
+/* ------------------ DATEPICKER ------------------ */
+.date-picker {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-font-size: 14px;
+    -fx-border-color: #00bcd4;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 8 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 172, 193, 0.25), 4, 0.4, 0, 2);
+}
+
+.date-picker:focused {
+    -fx-border-color: #006064;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 172, 193, 0.6), 6, 0.4, 0, 2);
+}
+
+/* ------------------ TEXTFIELD ------------------ */
+.text-field {
+    -fx-background-color: rgba(255, 255, 255, 0.85);
+    -fx-font-size: 14px;
+    -fx-text-fill: #004d40;
+    -fx-border-color: #00acc1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 8 12;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 172, 193, 0.3), 4, 0.4, 0, 2);
+}
+
+.text-field:focused {
+    -fx-border-color: #00838f;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 172, 193, 0.6), 6, 0.4, 0, 2);
+}
+
+/* ------------------ BUTTON ------------------ */
+.button {
+    -fx-background-color: linear-gradient(to right, #00bcd4, #26c6da);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 25;
+    -fx-padding: 10 24;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0.3, 0, 2);
+    -fx-border-color: transparent;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #00838f, #00acc1);
+}
+
+/* ------------------ OPTIONAL: TITLE LABEL ------------------ */
+#titleLabel {
+    -fx-font-size: 28px;
+    -fx-text-fill: #006064;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0 20 0;
+    -fx-alignment: center;
+}

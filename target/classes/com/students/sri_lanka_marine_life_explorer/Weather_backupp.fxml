@@ -1,0 +1,1144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-image: url(&quot;https://thumbs.dreamstime.com/b/beach-side-sri-lanka-coconut-trees-summer-32807549.jpg&quot;);" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.students.sri_lanka_marine_life_explorer.WeatherController">
+    <stylesheets>
+        <URL value="@/styles/weather.css" />
+    </stylesheets>
+   <BorderPane layoutX="1.0" prefHeight="700.0" prefWidth="900.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <bottom>
+            <Button mnemonicParsing="false" onAction="#goHome" prefHeight="26.0" prefWidth="597.0" style="-fx-background-color: gray;" text="Home" textFill="#d60f0f" BorderPane.alignment="CENTER">
+            <font>
+               <Font name="FreeMono Bold" size="16.0" />
+            </font></Button>
+      </bottom>
+      <top>
+         <Label alignment="CENTER" prefHeight="55.0" prefWidth="583.0" text="Welcome to the Weather" textAlignment="CENTER" BorderPane.alignment="CENTER">
+            <textFill>
+               <RadialGradient centerX="0.5333333333333334" centerY="0.5857142857142857" cycleMethod="REFLECT" focusAngle="-101.31" focusDistance="0.2790697674418605" radius="0.8255813953488371">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.800000011920929" green="0.31653332710266113" blue="0.01600000075995922" opacity="0.954023003578186" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </RadialGradient>
+            </textFill>
+            <font>
+               <Font name="Liberation Serif Bold" size="42.0" />
+            </font>
+         </Label>
+      </top>
+      <left>
+         <Button fx:id="prevButton" mnemonicParsing="false" onAction="#goToPreviousPage" prefHeight="459.0" prefWidth="31.0" text="&lt;" BorderPane.alignment="CENTER" />
+      </left>
+      <right>
+         <Button fx:id="nextButton" mnemonicParsing="false" onAction="#goToNextPage" prefHeight="462.0" prefWidth="31.0" text="&gt;" BorderPane.alignment="CENTER" />
+      </right>
+      <center>
+         <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+               <GridPane fx:id="grid1" prefHeight="549.0" prefWidth="828.0" style="-fx-padding: 20; -fx-hgap: 20; -fx-vgap: 12;">
+                 <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="299.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="299.0" />
+                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="354.0" minWidth="10.0" prefWidth="301.0" />
+                 </columnConstraints>
+                 <rowConstraints>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                 </rowConstraints>
+                  <children>
+                     <Pane fx:id="cell4" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel1" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage1" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel1" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel1" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel1" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel1" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.columnIndex="1">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel2" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage2" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel2" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel2" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel2" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel2" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell1" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.columnIndex="2">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel3" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage3" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel3" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel3" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel3" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel3" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell2" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.rowIndex="1">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel4" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage4" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel4" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel4" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel4" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel4" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell3" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel5" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage5" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel5" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel5" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel5" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel5" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell5" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel6" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage6" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel6" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel6" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel6" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel6" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell52" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.rowIndex="2">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel7" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage7" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel7" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel7" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel7" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel7" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell53" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel8" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage8" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel8" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel8" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel8" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel8" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell54" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel9" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage9" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel9" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel9" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel9" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel9" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                  </children>
+               </GridPane>
+               <GridPane fx:id="grid2" opacity="0.0" prefHeight="549.0" prefWidth="828.0" style="-fx-padding: 20; -fx-hgap: 20; -fx-vgap: 12;" visible="false">
+                  <columnConstraints>
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="299.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="532.0" minWidth="10.0" prefWidth="299.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="354.0" minWidth="10.0" prefWidth="301.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                  <children>
+                     <Pane fx:id="cell41" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel10" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage10" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel10" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel10" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel10" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel10" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell1" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.columnIndex="1">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel11" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage11" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel11" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel11" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel11" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel11" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell11" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.columnIndex="2">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel12" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage12" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel12" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel12" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel12" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel12" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell21" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.rowIndex="1">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel13" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage13" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel13" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel13" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel13" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel13" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell31" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel14" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage14" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel14" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel14" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel14" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel14" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell51" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel15" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage15" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel15" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel15" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel15" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel15" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell61" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.rowIndex="2">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel16" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage16" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel16" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel16" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel16" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel16" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell411" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel17" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage17" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel17" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel17" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel17" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel17" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                     <Pane fx:id="cell412" style="-fx-border-radius: 40; -fx-padding: 10; -fx-background-color: #daedf4; -fx-border-color: gray; -fx-background-radius: 40; -fx-border-width: 0.2;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <children>
+                           <VBox>
+                              <children>
+                                 <HBox prefHeight="72.0" prefWidth="229.0">
+                                    <children>
+                                       <Label fx:id="temperatureLabel18" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="72.0" prefWidth="142.0" styleClass="label" text="Temperature" textFill="#3ea12a">
+                                          <font>
+                                             <Font name="Serif Regular" size="50.0" />
+                                          </font>
+                                       </Label>
+                                       <ImageView fx:id="weatherImage18" fitHeight="72.0" fitWidth="73.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                                          <HBox.margin>
+                                             <Insets left="30.0" right="10.0" />
+                                          </HBox.margin>
+                                       </ImageView>
+                                    </children>
+                                 </HBox>
+                                 <Label fx:id="humidityLabel18" alignment="CENTER" prefHeight="11.0" prefWidth="93.0" text="Humidity" textFill="#26a159">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="windLabel18" alignment="CENTER" prefHeight="16.0" prefWidth="93.0" text="Wind" textFill="#297955">
+                                    <font>
+                                       <Font size="9.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="descriptionLabel18" alignment="CENTER" prefHeight="44.0" prefWidth="239.0" text="Description" textFill="#0e0c6f">
+                                    <font>
+                                       <Font size="17.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="cityLabel18" alignment="BOTTOM_CENTER" prefHeight="33.0" prefWidth="238.0" styleClass="label" text="City" textAlignment="CENTER">
+                                    <font>
+                                       <Font size="12.0" />
+                                    </font>
+                                    <textFill>
+                                       <LinearGradient endX="0.9666666666666666" endY="0.9761904761904762" startX="0.9142857142857144" startY="0.4666666666666667">
+                                          <stops>
+                                             <Stop>
+                                                <color>
+                                                   <Color red="0.21052631735801697" green="0.19103313982486725" blue="0.19103313982486725" opacity="0.6899999976158142" />
+                                                </color>
+                                             </Stop>
+                                             <Stop offset="1.0">
+                                                <color>
+                                                   <Color red="1.0" green="1.0" blue="1.0" />
+                                                </color>
+                                             </Stop>
+                                          </stops>
+                                       </LinearGradient>
+                                    </textFill>
+                                 </Label>
+                              </children>
+                           </VBox>
+                        </children>
+                     </Pane>
+                  </children>
+               </GridPane>
+            </children>
+         </StackPane>
+      </center>
+   </BorderPane>
+
+    
+</AnchorPane>
