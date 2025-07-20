@@ -67,9 +67,9 @@ public class FisheringController{
             f.setDistrict(districtField.getText());
             f.setContact(contactField.getText());
 
-          //  URL url = new URL("http://localhost:8080/api/fishermen");
+            URL url = new URL("http://localhost:8080/api/fishermen");
           //URL url = new URL("http://43.204.114.234:8080/api/fishermen");
-          URL url = new URL("http://13.201.93.127:8080/api/fishermen");
+         // URL url = new URL("http://13.201.93.127:8080/api/fishermen");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");
@@ -99,6 +99,6 @@ public class FisheringController{
     
     @FXML
     private void goToMainMenu() throws IOException{
-        App.setRoot("home");
+        App.setRoot("FishingManagement");
     }
 }

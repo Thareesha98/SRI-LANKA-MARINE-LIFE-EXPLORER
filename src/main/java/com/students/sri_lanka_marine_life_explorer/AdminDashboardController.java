@@ -26,7 +26,15 @@ public class AdminDashboardController {
         App.setRoot("AdminLogin");
     }
     
+    @FXML
+    private void goToAnalyseBoats() throws IOException{
+        App.setRoot("BoatType");
+    }
     
+    @FXML
+    private void goToLicenseType() throws IOException{
+        App.setRoot("LicenseType");
+    }
     
    
 }

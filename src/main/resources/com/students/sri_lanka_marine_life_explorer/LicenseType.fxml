@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../styles/boattype.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.students.sri_lanka_marine_life_explorer.LicenseTypeController">
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <BarChart fx:id="licenseTypeBarChart" prefHeight="600" prefWidth="800">
+              <xAxis>
+                <CategoryAxis label="License Type" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="Count" side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#goToBack" prefHeight="38.0" prefWidth="92.0" text="Back">
+               <VBox.margin>
+                  <Insets left="435.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

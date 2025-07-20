@@ -65,7 +65,8 @@ public class LicenseApprovalController implements Initializable {
 
     private void loadPendingLicenses() {
         try {
-            URL url = new URL("http://13.201.93.127:8080/api/licenses/pending");
+           // URL url = new URL("http://13.201.93.127:8080/api/licenses/pending");
+           URL url = new URL("http://localhost:8080/api/licenses/pending");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
 
@@ -88,7 +89,8 @@ public class LicenseApprovalController implements Initializable {
         }
 
         try {
-            URL url = new URL("http://13.201.93.127:8080/api/licenses/approve/" + selected.getId());
+           // URL url = new URL("http://13.201.93.127:8080/api/licenses/approve/" + selected.getId());
+           URL url = new URL("http://localhost:8080/api/licenses/approve/" + selected.getId());
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("PUT");
             conn.getResponseCode(); // Trigger request
@@ -109,7 +111,8 @@ public class LicenseApprovalController implements Initializable {
         }
 
         try {
-            URL url = new URL("http://13.201.93.127:8080/api/licenses/reject/" + selected.getId());
+         //   URL url = new URL("http://localhost:8080/api/licenses/reject/" + selected.getId());
+             URL url = new URL("http://13.201.93.127:8080/api/licenses/reject/" + selected.getId());
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("PUT");
             conn.getResponseCode(); // Trigger request

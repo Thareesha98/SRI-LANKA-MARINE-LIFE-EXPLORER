@@ -163,7 +163,8 @@ public class LicenseController {
 
     private void loadBoats() {
         try {
-            URL url = new URL("http://13.201.93.127:8080/api/boats");
+//            URL url = new URL("http://13.201.93.127:8080/api/boats");
+            URL url = new URL("http://localhost:8080/api/boats");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
 
@@ -196,7 +197,8 @@ public class LicenseController {
             license.setExpiryDate(expiryDatePicker.getValue());
             license.setRegion(regionField.getText());
 
-            URL url = new URL("http://13.201.93.127:8080/api/licenses");
+           // URL url = new URL("http://13.201.93.127:8080/api/licenses");
+           URL url = new URL("http://localhost:8080/api/licenses");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");
@@ -241,7 +243,7 @@ public class LicenseController {
     
     @FXML
     private void goMainMenu() throws IOException{
-        App.setRoot("home");
+        App.setRoot("FishingManagement");
     }
 }
 

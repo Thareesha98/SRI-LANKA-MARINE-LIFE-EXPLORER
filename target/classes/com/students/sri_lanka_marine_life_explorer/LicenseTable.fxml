@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" stylesheets="@../../../styles/licensetable.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.students.sri_lanka_marine_life_explorer.LicenseTableController">
-   <Button layoutX="382.0" layoutY="610.0" mnemonicParsing="false" onAction="#goToMainMenu" text="Main Menu" />
+   <Button layoutX="735.0" layoutY="607.0" mnemonicParsing="false" onAction="#goToMainMenu" text="Main Menu" />
     <TableView fx:id="licenseTable" editable="true" focusTraversable="false" layoutX="32.0" layoutY="88.0" maxWidth="840.0" minWidth="488.0" prefHeight="503.0" prefWidth="840.0">
     <columns>
         <TableColumn fx:id="boatColumn" prefWidth="120.0" text="Boat" />
@@ -25,5 +25,6 @@
          <Font size="42.0" />
       </font>
    </Label>
+   <Button layoutX="354.0" layoutY="607.0" mnemonicParsing="false" onAction="#downloadSelectedLicense" text="Download License" />
 
 </AnchorPane>

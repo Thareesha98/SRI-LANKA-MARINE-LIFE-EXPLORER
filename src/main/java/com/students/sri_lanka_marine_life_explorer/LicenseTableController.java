@@ -23,7 +23,12 @@ import javafx.scene.control.TableView;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import javafx.stage.FileChooser;
 
 
 
@@ -72,8 +77,8 @@ public class LicenseTableController implements Initializable {
     
     private void loadLicenses() {
         try {
-           // URL url = new URL("http://localhost:8080/api/licenses");
-           URL url = new URL("http://13.201.93.127:8080/api/licenses");
+            URL url = new URL("http://localhost:8080/api/licenses");
+           //URL url = new URL("http://13.201.93.127:8080/api/licenses");
           // URL url = new URL("http://13.201.93.127:8080/api/boats");
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -104,7 +109,45 @@ public class LicenseTableController implements Initializable {
     
     @FXML
     private void goToMainMenu() throws IOException{
-        App.setRoot("home");
+        App.setRoot("FishingManagement");
     }
+    
+    @FXML
+private void downloadSelectedLicense() {
+    License selected = licenseTable.getSelectionModel().getSelectedItem();
+    if (selected == null) {
+        showAlert("Please select a license to download.");
+        return;
+    }
+
+    FileChooser fileChooser = new FileChooser();
+    fileChooser.setTitle("Save License PDF");
+    fileChooser.setInitialFileName("license_" + selected.getId() + ".pdf");
+    fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
+    File file = fileChooser.showSaveDialog(licenseTable.getScene().getWindow());
+
+    if (file != null) {
+        String downloadUrl = "http://localhost:8080/api/licenses/download/" + selected.getId();
+        try (InputStream in = new URL(downloadUrl).openStream();
+             OutputStream out = new FileOutputStream(file)) {
+
+            byte[] buffer = new byte[4096];
+            int bytesRead;
+            while ((bytesRead = in.read(buffer)) != -1) {
+                out.write(buffer, 0, bytesRead);
+            }
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setHeaderText(null);
+            alert.setContentText("License PDF downloaded successfully.");
+            alert.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Failed to download PDF: " + e.getMessage());
+        }
+    }
+}
+
     
 }

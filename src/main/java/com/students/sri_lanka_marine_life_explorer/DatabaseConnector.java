@@ -15,8 +15,8 @@ import java.sql.SQLException;
 
 public class DatabaseConnector {
     private static final String URL = "jdbc:mysql://localhost:3306/marine";
-    private static final String USER = "phpuser";
-    private static final String PASSWORD = "phpuserpwd";
+    private static final String USER = "appuser";
+    private static final String PASSWORD = "app_pass123";
     
     public static Connection getConnection() throws SQLException{
         try{

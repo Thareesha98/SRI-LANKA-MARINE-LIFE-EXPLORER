@@ -60,8 +60,15 @@ public class HomeController {
     
     @FXML
     private void goToLicenseList() throws IOException{
-        App.setRoot("LicenseTable");
+       // App.setRoot("LicenseTable");
+        App.setRoot("FishingManagement");
     }
+    
+    @FXML
+    private void goToLicesneManagement() throws IOException{
+        App.setRoot("FishingManagement");
+    }
+    
      @FXML
     private void goToAdminLogin() throws IOException{
         App.setRoot("AdminLogin");

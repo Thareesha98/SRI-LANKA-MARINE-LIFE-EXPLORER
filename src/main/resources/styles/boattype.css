@@ -1,0 +1,63 @@
+/* Root BorderPane and VBox styling */
+.root, .vbox {
+    -fx-background-color: #ffffff;
+}
+
+/* Make the whole background non-white */
+.border-pane {
+    -fx-background-color: #f4f9ff; /* light blue-ish, soft tone */
+}
+
+/* Also set VBox to transparent so it inherits background */
+.vbox {
+    -fx-background-color: transparent;
+}
+
+
+/* PieChart styles */
+.pie-chart {
+    -fx-background-color: transparent;
+    -fx-border-radius: 20px;
+    -fx-padding: 20px;
+}
+
+/* Pie slices */
+.chart-pie {
+    -fx-pie-label-visible: true;
+    -fx-pie-label-font: 14px "Segoe UI Semibold";
+}
+
+/* Title styling (if you add later) */
+.chart-title {
+    -fx-font-size: 22px;
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0 20 0;
+}
+
+/* Legend styling */
+.chart-legend {
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+}
+
+.chart-legend-item-symbol {
+    -fx-background-radius: 5;
+    -fx-padding: 3;
+}
+
+/* Back button style */
+.button {
+    -fx-background-color: #2196f3;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 4, 0.2, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: #1976d2;
+}

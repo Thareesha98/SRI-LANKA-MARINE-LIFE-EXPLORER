@@ -49,7 +49,9 @@ public class LoginController {
         String password = passwordField.getText();
         
         try {
-            URL url = new URL("http://13.201.93.127:8080/login");  // Adjust port if needed
+//            URL url = new URL("http://13.201.93.127:8080/login");
+                URL url = new URL("http://localhost:8080/login");
+// Adjust port if needed
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");

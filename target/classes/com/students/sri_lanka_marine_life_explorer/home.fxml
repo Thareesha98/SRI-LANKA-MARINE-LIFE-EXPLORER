@@ -10,7 +10,7 @@
 <AnchorPane prefHeight="700.0" prefWidth="900.0" style="-fx-background-image: url('../Images/home.jpeg'); -fx-background-size: cover; -fx-padding: 40; -fx-background-image: url('https://t4.ftcdn.net/jpg/01/79/85/59/360_F_179855946_53P6oo7oZSZKSot77I0gMvAIv9aJX6GT.jpg');" stylesheets="@../../../styles/home.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.students.sri_lanka_marine_life_explorer.HomeController">
     
     <!-- Title -->
-    <Label layoutX="200.0" layoutY="50.0" styleClass="title-label" text="Sri Lanka Marine Life">
+    <Label layoutX="234.0" layoutY="54.0" styleClass="title-label" text="Marine Life Explorer">
         <font>
             <Font name="Segoe UI" size="42.0" />
         </font>
@@ -25,16 +25,16 @@
         </HBox>
         <HBox alignment="CENTER" spacing="20.0">
             <Button onAction="#goToEducation" style="-fx-background-radius: 20;" styleClass="modern-button" text="Educational" />
-            <Button onAction="#goToMap" style="-fx-background-radius: 20;" styleClass="modern-button" text="Map" />
+            <Button onAction="#goToMap" style="-fx-background-radius: 20;" styleClass="modern-button" text="News" />
         </HBox>
         <HBox alignment="CENTER" spacing="20.0">
-            <Button onAction="#goToLicenseList" style="-fx-background-radius: 20;" styleClass="modern-button" text="License List" />
+            <Button onAction="#goToLicenseList" style="-fx-background-radius: 20;" styleClass="modern-button" text="Map" />
             <Button onAction="#goToRegistration" style="-fx-background-radius: 20;" styleClass="modern-button" text="Registration" />
             <Button onAction="#goToAdminLogin" style="-fx-background-radius: 20;" styleClass="modern-button" text="Admin Login" />
         </HBox>
         <HBox alignment="CENTER" spacing="20.0">
-            <Button onAction="#goToBoatRegistration" style="-fx-background-radius: 20;" styleClass="modern-button" text="Boat Registration" />
-            <Button onAction="#goToLicense" style="-fx-background-radius: 20;" styleClass="modern-button" text="Get License" />
+            <Button onAction="#goToBoatRegistration" style="-fx-background-radius: 20;" styleClass="modern-button" text="Credits" />
+            <Button onAction="#goToLicense" style="-fx-background-radius: 20;" styleClass="modern-button" text="Exit" />
         </HBox>
     </VBox>
 </AnchorPane>

@@ -63,8 +63,8 @@ public class BoatController {
 
     private void loadFishermen() {
         try {
-         //  URL url = new URL("http://localhost:8080/api/fishermen");
-         URL url = new URL("http://13.201.93.127:8080/api/fishermen");
+           URL url = new URL("http://localhost:8080/api/fishermen");
+        // URL url = new URL("http://13.201.93.127:8080/api/fishermen");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
 
@@ -92,8 +92,9 @@ public class BoatController {
             boat.setEngine_type(engineTypeField.getText());
             
 
-            URL url = new URL("http://13.201.93.127:8080/api/boats");
+          //  URL url = new URL("http://13.201.93.127:8080/api/boats");
            // URL url = new URL("http://43.204.114.234:8080/api/boats");
+           URL url = new URL("http://localhost:8080/api/boats");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");
@@ -118,7 +119,7 @@ public class BoatController {
     
     @FXML
     private void goMainMenu() throws IOException{
-        App.setRoot("home");
+        App.setRoot("FishingManagement");
     }
 
     private void showAlert(String success, String boat_registered_successfully) {

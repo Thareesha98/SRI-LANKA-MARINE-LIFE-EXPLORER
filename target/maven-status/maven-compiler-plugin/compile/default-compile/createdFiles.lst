@@ -1,6 +1,7 @@
 com/students/sri_lanka_marine_life_explorer/BoatController.class
 com/students/sri_lanka_marine_life_explorer/FisheringController.class
 com/students/sri_lanka_marine_life_explorer/HomeController.class
+com/students/sri_lanka_marine_life_explorer/LicenseTypeController$1.class
 com/students/sri_lanka_marine_life_explorer/FisheriesController.class
 com/students/sri_lanka_marine_life_explorer/EducationSectionController.class
 com/students/sri_lanka_marine_life_explorer/DatabaseConnector.class
@@ -18,8 +19,10 @@ com/students/sri_lanka_marine_life_explorer/models/Admin.class
 com/students/sri_lanka_marine_life_explorer/BeachConditionController.class
 com/students/sri_lanka_marine_life_explorer/MarineSpeciesController.class
 com/students/sri_lanka_marine_life_explorer/BoatController$1.class
+com/students/sri_lanka_marine_life_explorer/BoatTypeController$1.class
 com/students/sri_lanka_marine_life_explorer/models/License.class
 com/students/sri_lanka_marine_life_explorer/LicenseApprovalController$1.class
+com/students/sri_lanka_marine_life_explorer/LicenseTypeController.class
 com/students/sri_lanka_marine_life_explorer/LicenseController.class
 com/students/sri_lanka_marine_life_explorer/BeachConditionController$1.class
 com/students/sri_lanka_marine_life_explorer/ChangePasswordController.class
@@ -27,9 +30,11 @@ com/students/sri_lanka_marine_life_explorer/mapper.class
 com/students/sri_lanka_marine_life_explorer/WeatherController.class
 com/students/sri_lanka_marine_life_explorer/SecondaryController.class
 com/students/sri_lanka_marine_life_explorer/models/NewsItem.class
+com/students/sri_lanka_marine_life_explorer/BoatTypeController.class
 com/students/sri_lanka_marine_life_explorer/LicenseTableController.class
 com/students/sri_lanka_marine_life_explorer/models/Boat.class
 com/students/sri_lanka_marine_life_explorer/NewsController$1$1.class
 com/students/sri_lanka_marine_life_explorer/NewsController$1.class
+com/students/sri_lanka_marine_life_explorer/FishingManagementController.class
 com/students/sri_lanka_marine_life_explorer/AdminDashboardController.class
 com/students/sri_lanka_marine_life_explorer/LicenseApprovalController.class
