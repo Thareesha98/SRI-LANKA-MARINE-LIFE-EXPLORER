@@ -7,6 +7,7 @@ import java.io.IOException;
 import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
 
@@ -14,9 +15,24 @@ import javafx.util.Duration;
  *
  * @author thareesha
  */
-public class HomeController {
+public class HomeController  {
 
     private Node myButton;
+    
+    @FXML
+    private AnchorPane homeAnchor;
+    
+    
+    @FXML
+    public void initialize() {
+        String imageUrl = getClass().getResource("/Images/myHome.png").toExternalForm();
+        homeAnchor.setStyle(
+            "-fx-background-image: url('" + imageUrl + "');" +
+            "-fx-background-size: cover;" +
+            "-fx-background-repeat: no-repeat;" +
+            "-fx-background-position: center center;"
+        );
+}
     
     @FXML
     private void goToWeather() throws IOException{
@@ -74,9 +90,6 @@ public class HomeController {
         App.setRoot("AdminLogin");
     }
     
-    
-
-    
-    
+   
     
 }

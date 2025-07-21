@@ -43,6 +43,7 @@ import javafx.application.Platform;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
 
 //import java.net.URL as JavaURL;
@@ -162,11 +163,23 @@ public class WeatherController implements Initializable {
         fadeOut.play();
     }
 
+    @FXML
+    private AnchorPane weatherHomeAnchor;
     
 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        String imageUrl = getClass().getResource("/Images/myHome.png").toExternalForm();
+        weatherHomeAnchor.setStyle(
+            "-fx-background-image: url('" + imageUrl + "');" +
+            "-fx-background-size: cover;" +
+            "-fx-background-repeat: no-repeat;" +
+            "-fx-background-position: center center;"
+        );
+        
+        
         cityLabels = new Label[] {
             cityLabel1, cityLabel2, cityLabel3, cityLabel4, cityLabel5,
             cityLabel6, cityLabel7, cityLabel8, cityLabel9,cityLabel10,cityLabel11, cityLabel12, cityLabel13, cityLabel14, cityLabel15,

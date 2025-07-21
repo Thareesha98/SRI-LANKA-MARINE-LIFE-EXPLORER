@@ -20,7 +20,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-image: url(&quot;https://thumbs.dreamstime.com/b/beach-side-sri-lanka-coconut-trees-summer-32807549.jpg&quot;);" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.students.sri_lanka_marine_life_explorer.WeatherController">
+<AnchorPane id="AnchorPane" fx:id="weatherHomeAnchor" prefHeight="700.0" prefWidth="900.0" style="-fx-background-repeat: no;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.students.sri_lanka_marine_life_explorer.WeatherController">
     <stylesheets>
         <URL value="@/styles/weather.css" />
     </stylesheets>
@@ -1135,7 +1135,7 @@
       <bottom>
          <HBox prefHeight="33.0" prefWidth="880.0" BorderPane.alignment="CENTER">
             <children>
-                  <Button blendMode="COLOR_BURN" mnemonicParsing="false" onAction="#goHome" prefHeight="26.0" prefWidth="84.0" style="-fx-background-color: gray; -fx-border-radius: 30;" text="Home" textFill="#d60f0f">
+                  <Button mnemonicParsing="false" onAction="#goHome" prefHeight="26.0" prefWidth="84.0" style="-fx-background-color: gray; -fx-border-radius: 30;" text="Home" textFill="#d60f0f">
                   <font>
                      <Font name="FreeMono Bold" size="16.0" />
                   </font>
@@ -1143,7 +1143,7 @@
                      <Insets left="400.0" />
                   </HBox.margin>
                </Button>
-               <Button fx:id="refresh" blendMode="COLOR_BURN" mnemonicParsing="false" onAction="#refreshData" prefHeight="33.0" prefWidth="71.0" style="-fx-background-image: url('Images/sun.png'); -fx-background-size: 100% 100%; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: transparent; -fx-border-color: transparent; -fx-border-radius: 40; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 1);" stylesheets="@../../../styles/weather.css" text="Refresh">
+               <Button fx:id="refresh" mnemonicParsing="false" onAction="#refreshData" prefHeight="33.0" prefWidth="71.0" style="-fx-background-image: url('Images/refresh.png'); -fx-background-size: 100% 100%; -fx-background-repeat: no-repeat; -fx-background-position: center; -fx-background-color: transparent; -fx-border-color: transparent; -fx-border-radius: 40; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 1);" stylesheets="@../../../styles/weather.css" text="Refresh">
                   <HBox.margin>
                      <Insets left="320.0" />
                   </HBox.margin>

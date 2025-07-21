@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.students.sri_lanka_marine_life_explorer.EducationSectionController">
-    <stylesheets>
-        <URL value="@/styles/educationsection.css" />
-    </stylesheets>
-    
-    <Button layoutX="161.0" layoutY="267.0" mnemonicParsing="false" onAction="#goHome" prefHeight="60.0" prefWidth="275.0" text="Home" textFill="#d60f0f" />
-   <Label layoutX="106.0" layoutY="53.0" prefHeight="177.0" prefWidth="362.0" text="Arosha's Part " textAlignment="CENTER" textFill="#2fa81c">
-      <font>
-         <Font size="51.0" />
-      </font>
-   </Label>
-    
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #00CED1;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.students.sri_lanka_marine_life_explorer.EducationSectionController">
+
+    <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #000080;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <Button mnemonicParsing="false" onAction="#goArticles" prefHeight="60.0" prefWidth="275.0" style="-fx-background-radius: 20; -fx-background-color: #15f4ee;" styleClass="modern-button" text="Articles">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+        <Button mnemonicParsing="false" onAction="#goQuizes" prefHeight="60.0" prefWidth="275.0" style="-fx-background-radius: 20; -fx-background-color: #15f4ee;" styleClass="modern-button" text="Quiz">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+        <Button mnemonicParsing="false" onAction="#goFunfacts" prefHeight="60.0" prefWidth="275.0" style="-fx-background-radius: 20; -fx-background-color: #15f4ee;" styleClass="modern-button" text="Fun Facts">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+
+        <Button mnemonicParsing="false" onAction="#goHome" prefHeight="60.0" prefWidth="275.0" style="-fx-background-radius: 20; -fx-background-color: #15f4ee;" styleClass="modern-button" text="Home" textFill="#100202">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+
+    </VBox>
 </AnchorPane>

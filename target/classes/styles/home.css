@@ -1,6 +1,11 @@
 /* Windows 8 Start-like UI CSS */
 
 /* Title Label - Clean and impactful */
+
+.root{
+    -fx-background-color: rgba(255, 255, 255, 0.1); 
+}
+
 .title-label {
     -fx-text-fill: #FFFFFF; /* Pure white text for contrast */
     -fx-font-weight: bold; /* Use bold for prominence */
@@ -14,7 +19,7 @@
 .modern-button {
     -fx-pref-width: 180px; /* Keep consistent tile width */
     -fx-pref-height: 120px; /* Increased height to make it more like a tile */
-    -fx-background-color: #0078D7; /* Default Windows 8 blue - flat color */
+    -fx-background-color: #FF6F61; /* Default Windows 8 blue - flat color */
     -fx-text-fill: white; /* White text for all tiles */
     -fx-font-size: 18px; /* Larger font for tile readability */
     -fx-font-weight: bold;
@@ -46,3 +51,4 @@
     -fx-background-color: #E51400; /* Metro red */
 }
 /* ...and so on for other colors as seen in the previous example */
+

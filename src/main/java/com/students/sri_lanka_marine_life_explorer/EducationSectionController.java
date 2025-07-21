@@ -10,24 +10,41 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-/**
- * FXML Controller class
- *
- * @author thareesha
- */
 public class EducationSectionController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
     }   
     
     @FXML
     private void goHome() throws IOException{
         App.setRoot("home");
     }
+    
+
+    
+    @FXML
+    private void goArticles() throws IOException{
+        App.setRoot("articles");
+    }
+    
+    @FXML
+    private void goAddArticleView() throws IOException{
+        App.setRoot("addArticle");
+    }
+    
+    @FXML
+    private void goQuizes() throws IOException{
+        App.setRoot("quizes");
+    }
+    
+    @FXML
+    private void goFunfacts() throws IOException{
+        App.setRoot("funFacts");
+    }
+    
     
 }

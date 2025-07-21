@@ -7,10 +7,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" style="-fx-background-image: url('../Images/home.jpeg'); -fx-background-size: cover; -fx-padding: 40; -fx-background-image: url('https://t4.ftcdn.net/jpg/01/79/85/59/360_F_179855946_53P6oo7oZSZKSot77I0gMvAIv9aJX6GT.jpg');" stylesheets="@../../../styles/home.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.students.sri_lanka_marine_life_explorer.HomeController">
-    
+<AnchorPane fx:id="homeAnchor" prefHeight="700.0" prefWidth="900.0" style="-fx-background-image: url('../Images/home.jpeg'); -fx-background-size: cover; -fx-padding: 40;" stylesheets="@../../../styles/home.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.students.sri_lanka_marine_life_explorer.HomeController">
+    <AnchorPane fx:id="overlayPane" styleClass="overlay" />
     <!-- Title -->
-    <Label layoutX="234.0" layoutY="54.0" styleClass="title-label" text="Marine Life Explorer">
+    <Label layoutX="268.0" layoutY="52.0" styleClass="title-label" text="Marine Life Explorer">
         <font>
             <Font name="Segoe UI" size="42.0" />
         </font>

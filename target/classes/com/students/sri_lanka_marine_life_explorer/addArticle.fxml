@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.students.sri_lanka_marine_life_explorer.AddArticleController"
+
+            style="-fx-background-color: #d7f1f1;">
+    <children>
+        <VBox spacing="10.0" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.bottomAnchor="20.0">
+            <Label text="Title:"/>
+            <TextField fx:id="titleField" promptText="Enter article title"/>
+            <Label text="Topic:"/>
+            <TextField fx:id="topicField" promptText="Enter article topic"/>
+            <Label text="Content:"/>
+            <TextArea fx:id="contentArea" promptText="Enter article content" prefRowCount="15" VBox.vgrow="ALWAYS"/>
+            <HBox spacing="10.0">
+                <Button fx:id="saveButton" text="Save" onAction="#handleSave"/>
+                <Button fx:id="backButton" text="Back" onAction="#handleBack"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
+

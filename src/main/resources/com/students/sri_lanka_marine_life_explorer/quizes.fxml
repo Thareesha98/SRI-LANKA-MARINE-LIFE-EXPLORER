@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane style="-fx-background-color: #00CED1;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.students.sri_lanka_marine_life_explorer.QuizController"> 
+
+    <VBox fx:id="mainVBox" alignment="CENTER" layoutX="100" layoutY="50" prefHeight="400" prefWidth="600" spacing="30">
+
+        
+        <Label fx:id="questionLabel" alignment="CENTER" style="-fx-font-size: 22px;                       -fx-font-weight: bold;                       -fx-text-fill: #002F4B;" textAlignment="CENTER" wrapText="true" />
+
+        
+        <VBox alignment="CENTER_LEFT" spacing="15">
+            <RadioButton fx:id="optionA" />
+            <RadioButton fx:id="optionB" />
+            <RadioButton fx:id="optionC" />
+            <RadioButton fx:id="optionD" />
+        </VBox>
+
+        
+        <HBox alignment="CENTER" spacing="20">
+            <Button fx:id="backButton" style="-fx-background-color: #00aaff;                            -fx-text-fill: white;                            -fx-font-size: 14px;                            -fx-font-weight: bold;                            -fx-padding: 10 20;                            -fx-background-radius: 8;                            -fx-border-radius: 8;                            -fx-border-color: white;                            -fx-border-width: 2;" text="Back" />
+
+            <Button fx:id="nextButton" style="-fx-background-color: #0077cc;                            -fx-text-fill: white;                            -fx-font-size: 14px;                            -fx-font-weight: bold;                            -fx-padding: 10 20;                            -fx-background-radius: 8;                            -fx-border-radius: 8;                            -fx-border-color: white;                            -fx-border-width: 2;" text="Next" />
+        </HBox>
+
+        
+        <Label fx:id="scoreLabel" style="-fx-font-size: 14px;                       -fx-text-fill: #002F4B;" />
+
+    </VBox>
+</AnchorPane>

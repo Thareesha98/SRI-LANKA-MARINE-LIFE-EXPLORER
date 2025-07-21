@@ -109,7 +109,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
 public class NewsController {
-     private static final String NEWS_URL2 = "https://rss.app/embed/v1/ticker/x43FIU2UXUP35VmO";
+     private static final String NEWS_URL2 = "https://rss.app/embed/v1/ticker/l86TsVRyudzUn7qc";
 
     @FXML
     private ListView<NewsItem> newsListView;
@@ -125,7 +125,7 @@ public class NewsController {
         
     //      newsListView.getScene().getStylesheets().add(getClass().getResource("/styles/news.css").toExternalForm());
 
-        loadRSSFeed("https://rss.app/feeds/x43FIU2UXUP35VmO.xml");
+        loadRSSFeed("https://rss.app/feeds/l86TsVRyudzUn7qc.xml");
 
         newsListView.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2) {
